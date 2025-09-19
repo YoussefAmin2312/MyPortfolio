@@ -46,17 +46,19 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16 fade-in-delay-3">
             <Button
+              onClick={() => scrollToSection('#projects')}
+              size="lg"
+              className="bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg"
+            >
+              View My Work
+            </Button>
+            <Button
+              onClick={() => scrollToSection('#contact')}
               variant="outline"
               size="lg"
               className="border-2 border-white/30 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg backdrop-blur-sm"
             >
-              Download Resume
-            </Button>
-            <Button
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg"
-            >
-              Contact
+              Contact Me
             </Button>
           </div>
 
