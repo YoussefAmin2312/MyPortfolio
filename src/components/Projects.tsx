@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import bookHeavenImg from '@/assets/book-heaven-project.jpg';
-import mendAiImg from '@/assets/mend-ai-project.jpg';
+import theraImg from '@/assets/thera-project.png';
 import yogaSkincareImg from '@/assets/yoga-skincare-project.jpg';
 const Projects = () => {
   const navigate = useNavigate();
@@ -11,11 +11,11 @@ const Projects = () => {
     image: bookHeavenImg,
     category: 'Mobile App'
   }, {
-    id: 'mend-ai',
-    title: 'Mend - AI Couples Therapy',
-    description: 'MVP for a voice-based AI couples therapy app',
-    image: mendAiImg,
-    category: 'AI/Healthcare'
+    id: 'thera',
+    title: 'Thera',
+    description: 'Find your therapist - Mental health therapy app',
+    image: theraImg,
+    category: 'Healthcare'
   }, {
     id: 'yoga-skincare',
     title: 'Yoga Face & Skin Care',
