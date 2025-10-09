@@ -12,6 +12,7 @@ import temperatureSensorImg from '@/assets/temperature-sensor-project.jpg';
 import portfolioWebsiteImg from '@/assets/portfolio-website-project.jpg';
 import theraResearchImg from '@/assets/thera-research-diagram.jpg';
 import theraPersonaImg from '@/assets/thera-persona-photo.jpg';
+import doubleDiamondImg from '@/assets/double-diamond-diagram.png';
 import theraUserFlowImg from '@/assets/thera-user-flow.jpg';
 import theraWireframeLowImg from '@/assets/thera-wireframe-low.jpg';
 import theraWireframeMidImg from '@/assets/thera-wireframe-mid.jpg';
@@ -334,6 +335,15 @@ const ProjectCaseStudy = () => {
                   <p className="text-muted-foreground leading-relaxed">
                     I structured my process using the <span className="font-semibold text-foreground">Double Diamond framework</span>, which separates the design journey into exploring the problem space and then shaping the solution space.
                   </p>
+                </div>
+
+                {/* Double Diamond Diagram */}
+                <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
+                  <img
+                    src={doubleDiamondImg}
+                    alt="Double Diamond Framework"
+                    className="w-full max-w-3xl mx-auto"
+                  />
                 </div>
 
                 {/* Double Diamond Phases */}
