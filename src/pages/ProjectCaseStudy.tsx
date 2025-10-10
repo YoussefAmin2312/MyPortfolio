@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Target, Lightbulb, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -25,6 +26,10 @@ import theraUsabilityImg from '@/assets/thera-usability-testing.jpg';
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [projectId]);
 
   const projects = {
     'book-heaven': {
