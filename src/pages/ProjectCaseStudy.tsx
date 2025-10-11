@@ -289,6 +289,8 @@ const ProjectCaseStudy = () => {
               loop
               muted
               playsInline
+              preload="auto"
+              poster={theraImg}
               className="w-full h-96 object-cover"
             />
           </div>
