@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import bookHeavenImg from '@/assets/book-heaven-project.jpg';
 import theraImg from '@/assets/thera-project.png';
-import yogaSkincareImg from '@/assets/yoga-skincare-project.jpg';
+import teachlyImg from '@/assets/teachly-project.jpg';
 const Projects = () => {
   const navigate = useNavigate();
   const projects = [{
@@ -17,11 +17,11 @@ const Projects = () => {
     image: theraImg,
     category: 'Healthcare'
   }, {
-    id: 'yoga-skincare',
-    title: 'Yoga Face & Skin Care',
-    description: 'Wellness app focusing on facial yoga exercises',
-    image: yogaSkincareImg,
-    category: 'Wellness'
+    id: 'teachly',
+    title: 'Teachly',
+    description: 'Language learning platform connecting students with tutors',
+    image: teachlyImg,
+    category: 'Education'
   }];
   const handleProjectClick = (projectId: string) => {
     navigate(`/project/${projectId}`);
