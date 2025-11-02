@@ -1,51 +1,43 @@
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import heroBackground from '@/assets/hero-bg.jpg';
-import profileAvatar from '@/assets/profile-avatar.jpg';
+import bookHeavenImg from '@/assets/book-heaven-project.jpg';
+import theraImg from '@/assets/thera-project.png';
+
 const Hero = () => {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.querySelector(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  };
-  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 hero-gradient"></div>
-      
-      {/* Background image overlay */}
-      <div className="absolute inset-0 opacity-20 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${heroBackground})`
-    }}></div>
-      
-      {/* Glass overlay */}
-      <div className="absolute inset-0 glass"></div>
-
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl ml-8 text-left">
-
-          {/* Subtitle */}
-          <p className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white/90 mb-6 fade-in-delay-2">I'm Youssef, A Computer Engineer, UI/UX Designer & Mobile App Developer</p>
-
-          {/* Tagline */}
-          <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-2xl fade-in-delay-2">
-            I design and develop user-centered experiences that are both functional and visually engaging.
+  return (
+    <section id="home" className="min-h-screen bg-white pt-20">
+      <div className="max-w-[1200px] mx-auto px-8 py-24">
+        {/* Hero Content - Centered */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl md:text-6xl font-bold text-[#222222] mb-3">
+            Youssef Yasser
+          </h1>
+          <p className="text-base text-[#555555] uppercase tracking-wider">
+            UX/UI DESIGNER
           </p>
+        </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16 fade-in-delay-3">
-            <Button onClick={() => scrollToSection('#projects')} size="lg" className="bg-white/10 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg">
-              View My Work
-            </Button>
-            <Button onClick={() => scrollToSection('#contact')} variant="outline" size="lg" className="bg-white/10 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg">
-              Contact Me
-            </Button>
+        {/* Portfolio Preview Section */}
+        <div className="flex flex-col md:flex-row gap-10 items-center justify-center mt-16">
+          {/* Left mockup - Book Heaven */}
+          <div className="w-full md:w-[45%] max-w-md">
+            <img 
+              src={bookHeavenImg}
+              alt="Book Heaven Project"
+              className="w-full h-auto rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.12)] transition-shadow duration-300"
+            />
           </div>
 
+          {/* Right mockup - Thera */}
+          <div className="w-full md:w-[45%] max-w-md">
+            <img 
+              src={theraImg}
+              alt="Thera Project"
+              className="w-full h-auto rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_15px_50px_rgba(0,0,0,0.12)] transition-shadow duration-300"
+            />
+          </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
