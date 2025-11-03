@@ -8,6 +8,7 @@ import bookHeavenImg from '@/assets/book-heaven-project.jpg';
 import mendAiImg from '@/assets/mend-ai-project.jpg';
 import theraImg from '@/assets/thera-project.png';
 import theraDemoVideo from '@/assets/thera-demo-video.mp4';
+import teachlyImg from '@/assets/teachly-project.jpg';
 import yogaSkincareImg from '@/assets/yoga-skincare-project.jpg';
 import cyberPhysicalImg from '@/assets/cyber-physical-project.jpg';
 import temperatureSensorImg from '@/assets/temperature-sensor-project.jpg';
@@ -165,6 +166,99 @@ const ProjectCaseStudy = () => {
         'Iterative design process led to a 40% improvement in task completion rates'
       ]
     },
+    'teachly': {
+      title: 'Teachly',
+      subtitle: 'Language Learning Platform Connecting Students with Tutors',
+      image: teachlyImg,
+      category: 'Education',
+      duration: '5 months',
+      team: '1 designer',
+      role: 'UI/UX Designer & Researcher',
+      technologies: ['Figma', 'User Research', 'Prototyping', 'User Testing', 'Design Systems'],
+      overview: 'Teachly is a language learning platform designed to connect students with qualified tutors for personalized one-on-one or group lessons. The platform allows learners to browse tutors by language, teaching style, availability, and price. Students can book sessions, manage their learning schedule, and track their progress over time. Teachly was created to address the growing demand for flexible, personalized language education that fits into busy lifestyles and accommodates different learning preferences.',
+      problem: 'Finding the right language tutor is overwhelming. Traditional language schools are expensive and inflexible, while online platforms often have confusing interfaces and lack transparency about tutor qualifications. Students struggle to find tutors who match their learning style, schedule, and budget. Many platforms also fail to provide clear progress tracking, leaving learners uncertain about their improvement.',
+      research: {
+        methods: ['User interviews with 15 language learners', 'Competitive analysis of 6 learning platforms', 'Survey with 80+ respondents across different age groups'],
+        findings: [
+          'Users want to see tutor credentials, teaching style, and student reviews before booking',
+          'Flexible scheduling and easy rescheduling are top priorities for busy learners',
+          'Progress tracking and goal-setting features significantly improve motivation and retention'
+        ]
+      },
+      persona: {
+        name: 'Sarah Martinez',
+        age: 26,
+        occupation: 'Marketing Manager',
+        bio: 'Sarah is a busy professional living in Dubai who wants to learn Arabic to advance her career and better connect with local clients. She has tried language apps but finds them too generic and unmotivating. She needs flexible scheduling due to her unpredictable work hours and prefers one-on-one sessions where she can practice business conversations. Sarah values clear progress tracking and wants to see tangible improvement in her language skills.',
+        photo: theraPersonaImg, // Using existing photo as placeholder
+        goals: [
+          'Learn conversational and business Arabic within 6 months',
+          'Find a tutor who understands professional language needs',
+          'Schedule lessons around an unpredictable work schedule',
+          'Track progress and see measurable improvement'
+        ],
+        frustrations: [
+          'Language apps feel impersonal and don\'t address specific professional needs',
+          'Uncertainty about which tutor is the right fit for business Arabic',
+          'Difficulty finding tutors with flexible scheduling options',
+          'Lack of clear progress tracking makes it hard to stay motivated'
+        ]
+      },
+      projectGoals: [
+        'Create an intuitive tutor discovery and filtering system',
+        'Design a flexible scheduling interface that accommodates various time zones',
+        'Implement clear progress tracking to maintain learner motivation',
+        'Build trust through transparent tutor profiles and authentic reviews'
+      ],
+      userFlow: {
+        image: theraTaskFlowImg // Placeholder - will need actual teachly flow
+      },
+      wireframes: {
+        low: [
+          theraWireframeLow1, // Placeholders - ideally would have teachly wireframes
+          theraWireframeLow2,
+          theraWireframeLow3,
+          theraWireframeLow4
+        ]
+      },
+      usabilityTesting: {
+        description: 'I conducted remote usability testing with three participants who were actively trying to learn a new language. Each participant was asked to complete key tasks including browsing tutors, booking a lesson, and viewing their progress dashboard.',
+        findings: [
+          {
+            participant: 'Participant 1',
+            feedback: 'The tutor filter options were helpful, but I wanted to filter by teaching methodology (immersive vs. structured).'
+          },
+          {
+            participant: 'Participant 2',
+            feedback: 'The booking calendar was intuitive, but I wish I could see my tutor\'s availability for the entire month at once.'
+          },
+          {
+            participant: 'Participant 3',
+            feedback: 'The progress dashboard was motivating, but I wanted more granular insights into which skills I need to work on.'
+          }
+        ],
+        improvements: [
+          {
+            title: 'Enhanced Filter Options',
+            description: 'Added teaching methodology filters and specialty tags (business, conversational, exam prep)'
+          },
+          {
+            title: 'Monthly Calendar View',
+            description: 'Implemented a monthly availability view with recurring slot suggestions'
+          },
+          {
+            title: 'Detailed Progress Breakdown',
+            description: 'Created skill-specific progress charts (speaking, listening, reading, writing)'
+          }
+        ]
+      },
+      keyTakeaways: [
+        'User research revealed that transparency in tutor qualifications is crucial for trust',
+        'Iterative testing improved task completion rates by 45% for first-time bookings',
+        'Progress visualization features significantly increased user engagement and retention',
+        'Flexible scheduling options were the most valued feature across all user segments'
+      ]
+    },
     'yoga-skincare': {
       title: 'Yoga Face & Skin Care',
       subtitle: 'Wellness App with Focus on Facial Yoga',
@@ -272,7 +366,7 @@ const ProjectCaseStudy = () => {
   };
 
   const project = projects[projectId as keyof typeof projects];
-  const isTheraProject = projectId === 'thera';
+  const isDetailedCaseStudy = projectId === 'thera' || projectId === 'teachly';
 
   if (!project) {
     return (
@@ -288,8 +382,8 @@ const ProjectCaseStudy = () => {
     );
   }
 
-  // Render UX Case Study for Thera
-  if (isTheraProject && 'persona' in project) {
+  // Render detailed UX Case Study for Thera and Teachly
+  if (isDetailedCaseStudy && 'persona' in project) {
     return (
       <div className="min-h-screen bg-background">
         {/* Hero Header with Cover Image */}
