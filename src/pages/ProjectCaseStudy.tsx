@@ -45,6 +45,11 @@ import teachlyWireframeLow3 from '@/assets/teachly-wireframe-low-3.png';
 import teachlyWireframeLow4 from '@/assets/teachly-wireframe-low-4.png';
 import teachlyWireframeLow5 from '@/assets/teachly-wireframe-low-5.png';
 import teachlyWireframeLow6 from '@/assets/teachly-wireframe-low-6.png';
+import teachlyWireframeLow7 from '@/assets/teachly-wireframe-low-7.png';
+import teachlyWireframeLow8 from '@/assets/teachly-wireframe-low-8.png';
+import teachlyWireframeLow9 from '@/assets/teachly-wireframe-low-9.png';
+import teachlyWireframeLow10 from '@/assets/teachly-wireframe-low-10.png';
+import teachlyWireframeLow11 from '@/assets/teachly-wireframe-low-11.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -227,7 +232,12 @@ const ProjectCaseStudy = () => {
           teachlyWireframeLow3,
           teachlyWireframeLow4,
           teachlyWireframeLow5,
-          teachlyWireframeLow6
+          teachlyWireframeLow6,
+          teachlyWireframeLow7,
+          teachlyWireframeLow8,
+          teachlyWireframeLow9,
+          teachlyWireframeLow10,
+          teachlyWireframeLow11
         ]
       },
       usabilityTesting: {
