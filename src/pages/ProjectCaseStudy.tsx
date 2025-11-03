@@ -299,7 +299,7 @@ const ProjectCaseStudy = () => {
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/80" />
           
           <div className="absolute inset-0 flex flex-col justify-end">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
