@@ -64,6 +64,9 @@ import teachlyHighScreen10 from '@/assets/teachly-high-screen-10.png';
 import teachlyHighScreen11 from '@/assets/teachly-high-screen-11.png';
 import teachlyHighScreen12 from '@/assets/teachly-high-screen-12.png';
 import designThinkingImg from '@/assets/design-thinking-stages.png';
+import teachlyInfoArchImg from '@/assets/teachly-information-architecture.png';
+import teachlyUserFlowImg from '@/assets/teachly-user-flow.png';
+import teachlyTaskFlowImg from '@/assets/teachly-task-flow.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -143,6 +146,7 @@ const ProjectCaseStudy = () => {
         'Implement clear privacy features that build user trust'
       ],
       userFlow: {
+        description: 'The flow includes the search of a specific doctor through filters; the choice of doctor and time slot and finally the checkout.',
         image: theraTaskFlowImg
       },
       wireframes: {
@@ -256,33 +260,59 @@ const ProjectCaseStudy = () => {
           }
         ]
       },
-      persona: {
-        name: 'Sarah Martinez',
-        age: 26,
-        occupation: 'Marketing Manager',
-        bio: 'Sarah is a busy professional living in Dubai who wants to learn Arabic to advance her career and better connect with local clients. She has tried language apps but finds them too generic and unmotivating. She needs flexible scheduling due to her unpredictable work hours and prefers one-on-one sessions where she can practice business conversations. Sarah values clear progress tracking and wants to see tangible improvement in her language skills.',
-        photo: theraPersonaImg, // Using existing photo as placeholder
-        goals: [
-          'Learn conversational and business Arabic within 6 months',
-          'Find a tutor who understands professional language needs',
-          'Schedule lessons around an unpredictable work schedule',
-          'Track progress and see measurable improvement'
-        ],
-        frustrations: [
-          'Language apps feel impersonal and don\'t address specific professional needs',
-          'Uncertainty about which tutor is the right fit for business Arabic',
-          'Difficulty finding tutors with flexible scheduling options',
-          'Lack of clear progress tracking makes it hard to stay motivated'
-        ]
-      },
+      personas: [
+        {
+          name: 'Mariam Ahmed',
+          age: 24,
+          occupation: 'Marketing Executive',
+          location: 'Dubai, UAE',
+          about: 'Sara is a young professional who recently started working with international clients. She wants to learn Spanish to communicate better with her company\'s partners and expand her career opportunities. Her busy schedule makes it difficult to attend fixed classes, so she prefers flexible, one-on-one online lessons.',
+          goals: [
+            'Learn conversational Spanish for professional use.',
+            'Find a reliable tutor with flexible hours.',
+            'Pay easily and track her upcoming sessions.'
+          ],
+          frustrations: [
+            'Most apps focus on vocabulary, not real conversation.',
+            'Hard to know if a tutor fits her learning style before booking.',
+            'Complicated scheduling interfaces on other platforms.'
+          ]
+        },
+        {
+          name: 'Omar Hassan',
+          age: 22,
+          occupation: 'University Student',
+          location: 'Cairo, Egypt',
+          about: 'Omar is a computer science student who wants to improve his English speaking skills to prepare for internships abroad. He prefers affordable lessons with native speakers and enjoys short, focused sessions that fit into his class schedule.',
+          goals: [
+            'Improve English speaking confidence.',
+            'Filter tutors by price and availability.',
+            'Learn through casual, engaging sessions rather than structured courses.'
+          ],
+          frustrations: [
+            'Finds it hard to identify affordable, trustworthy native tutors.',
+            'Feels unsure about paying for a full course without knowing if the tutor fits his style.',
+            'Payment steps and checkout flows on other platforms are often confusing or unclear.'
+          ]
+        }
+      ],
       projectGoals: [
         'Create an intuitive tutor discovery and filtering system',
         'Design a flexible scheduling interface that accommodates various time zones',
         'Implement clear progress tracking to maintain learner motivation',
         'Build trust through transparent tutor profiles and authentic reviews'
       ],
+      informationArchitecture: {
+        description: 'I organized the app\'s structure to ensure users could easily navigate between key features like browsing tutors, scheduling lessons, messaging, and applying filters. This hierarchical layout ensures all important actions are accessible within a few taps.',
+        image: teachlyInfoArchImg
+      },
       userFlow: {
-        image: theraTaskFlowImg // Placeholder - will need actual teachly flow
+        description: 'I mapped out the complete user journey from discovering tutors to booking and confirming lessons. This diagram visualizes decision points and alternate paths users might take — such as messaging first or booking directly — helping identify opportunities to streamline the experience.',
+        image: teachlyUserFlowImg
+      },
+      taskFlow: {
+        description: 'This flow focuses on the core task: searching for a Spanish tutor and completing a lesson booking. It highlights each step — from applying filters and reviewing tutor profiles to scheduling, payment, and confirmation — ensuring a clear, frictionless process.',
+        image: teachlyTaskFlowImg
       },
       wireframes: {
         low: [
@@ -586,7 +616,7 @@ const ProjectCaseStudy = () => {
                     {/* Framework Introduction */}
                     <div className="bg-muted/50 rounded-lg p-6 border border-border">
                       <p className="text-muted-foreground leading-relaxed">
-                        {project.research.introduction}
+                        {(project.research as any).introduction}
                       </p>
                     </div>
 
@@ -601,7 +631,7 @@ const ProjectCaseStudy = () => {
 
                     {/* Design Thinking Phases */}
                     <div className="space-y-6">
-                      {project.research.phases.map((phase, index) => (
+                      {(project.research as any).phases.map((phase: any, index: number) => (
                         <Card key={index} className="border-l-4 border-l-primary">
                           <CardContent className="pt-6">
                             <div className="flex items-start gap-4 mb-4">
@@ -753,60 +783,129 @@ const ProjectCaseStudy = () => {
             {/* Persona */}
             <section>
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                User Persona
+                {(project as any).personas ? 'User Personas' : 'User Persona'}
               </h2>
               
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col md:flex-row gap-6">
-                    <div className="flex-shrink-0">
-                      <img
-                        src={project.persona.photo}
-                        alt={project.persona.name}
-                        className="w-32 h-32 rounded-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1 space-y-4">
-                      <div>
-                        <h3 className="font-semibold text-xl text-foreground">
-                          {project.persona.name}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {project.persona.age} years old, {project.persona.occupation}
+              {(project as any).personas ? (
+                <div className="space-y-6">
+                  {(project as any).personas.map((persona: any, idx: number) => (
+                    <Card key={idx}>
+                      <CardContent className="pt-6">
+                        <div className="flex flex-col md:flex-row gap-6">
+                          <div className="flex-shrink-0">
+                            <div className="w-32 h-32 rounded-full bg-muted flex items-center justify-center">
+                              <svg
+                                className="w-16 h-16 text-muted-foreground"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div className="flex-1 space-y-4">
+                            <div>
+                              <h3 className="font-semibold text-xl text-foreground">
+                                {persona.name}
+                              </h3>
+                              <p className="text-sm text-muted-foreground">
+                                {persona.age} years old, {persona.occupation}
+                              </p>
+                              {persona.location && (
+                                <p className="text-sm text-muted-foreground">{persona.location}</p>
+                              )}
+                            </div>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {persona.about}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-3">Goals</h4>
+                            <ul className="space-y-2">
+                              {persona.goals.map((goal, index) => (
+                                <li key={index} className="flex items-start space-x-2">
+                                  <span className="text-primary mt-1">✓</span>
+                                  <span className="text-muted-foreground text-sm">{goal}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-3">Frustrations</h4>
+                            <ul className="space-y-2">
+                              {persona.frustrations.map((frustration, index) => (
+                                <li key={index} className="flex items-start space-x-2">
+                                  <AlertCircle className="text-destructive mt-0.5 flex-shrink-0" size={16} />
+                                  <span className="text-muted-foreground text-sm">{frustration}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <Card>
+                  <CardContent className="pt-6">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="flex-shrink-0">
+                        <img
+                          src={project.persona.photo}
+                          alt={project.persona.name}
+                          className="w-32 h-32 rounded-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 space-y-4">
+                        <div>
+                          <h3 className="font-semibold text-xl text-foreground">
+                            {project.persona.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            {project.persona.age} years old, {project.persona.occupation}
+                          </p>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {project.persona.bio}
                         </p>
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.persona.bio}
-                      </p>
                     </div>
-                  </div>
 
-                  <div className="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Goals</h4>
-                      <ul className="space-y-2">
-                        {project.persona.goals.map((goal, index) => (
-                          <li key={index} className="flex items-start space-x-2">
-                            <span className="text-primary mt-1">✓</span>
-                            <span className="text-muted-foreground text-sm">{goal}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Goals</h4>
+                        <ul className="space-y-2">
+                          {project.persona.goals.map((goal, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-muted-foreground text-sm">{goal}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Frustrations</h4>
+                        <ul className="space-y-2">
+                          {project.persona.frustrations.map((frustration, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <AlertCircle className="text-destructive mt-0.5 flex-shrink-0" size={16} />
+                              <span className="text-muted-foreground text-sm">{frustration}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Frustrations</h4>
-                      <ul className="space-y-2">
-                        {project.persona.frustrations.map((frustration, index) => (
-                          <li key={index} className="flex items-start space-x-2">
-                            <AlertCircle className="text-destructive mt-0.5 flex-shrink-0" size={16} />
-                            <span className="text-muted-foreground text-sm">{frustration}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              )}
             </section>
 
             {/* Project Goals */}
@@ -825,43 +924,65 @@ const ProjectCaseStudy = () => {
             </section>
 
             {/* Information Architecture */}
-            <section>
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                Information Architecture
-              </h2>
-              <div className="space-y-6">
-                <p className="text-muted-foreground leading-relaxed">
-                  This information architecture represents the structure of a therapy booking application designed to make it easy for users to connect with therapists either online or in person. The goal was to create a simple, intuitive flow that minimizes friction from login to session booking.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  The flow starts with the authentication process, where users can log in using email or social accounts (Google, Apple, or Facebook), reset their password, or sign up for a new account.
-                </p>
-                <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+            {(project as any).informationArchitecture && (
+              <section>
+                <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                  Information Architecture
+                </h2>
+                <div className="space-y-6">
+                  <p className="text-muted-foreground leading-relaxed">
+                    {(project as any).informationArchitecture.description}
+                  </p>
+                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <img
+                      src={(project as any).informationArchitecture.image}
+                      alt="Information Architecture diagram showing app structure"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* User Flow */}
+            {(project as any).userFlow && (
+              <section>
+                <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                  User Flow
+                </h2>
+                {(project as any).userFlow.description && (
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    {(project as any).userFlow.description}
+                  </p>
+                )}
+                <div className="rounded-lg overflow-hidden shadow-md">
                   <img
-                    src={theraInfoArchImg}
-                    alt="Information Architecture diagram showing app structure"
+                    src={(project as any).userFlow.image}
+                    alt="User flow diagram showing booking journey"
                     className="w-full"
                   />
                 </div>
-              </div>
-            </section>
+              </section>
+            )}
 
-            {/* User Flow */}
-            <section>
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                User Flow / Task Flow
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                The flow includes the search of a specific doctor through filters; the choice of doctor and time slot and finally the checkout.
-              </p>
-              <div className="rounded-lg overflow-hidden shadow-md">
-                <img
-                  src={project.userFlow.image}
-                  alt="Task flow diagram showing booking journey"
-                  className="w-full"
-                />
-              </div>
-            </section>
+            {/* Task Flow */}
+            {(project as any).taskFlow && (
+              <section>
+                <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                  Task Flow
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  {(project as any).taskFlow.description}
+                </p>
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <img
+                    src={(project as any).taskFlow.image}
+                    alt="Task flow diagram"
+                    className="w-full"
+                  />
+                </div>
+              </section>
+            )}
 
             {/* Wireframes */}
             <section>
