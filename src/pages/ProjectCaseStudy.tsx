@@ -63,6 +63,7 @@ import teachlyHighScreen9 from '@/assets/teachly-high-screen-9.png';
 import teachlyHighScreen10 from '@/assets/teachly-high-screen-10.png';
 import teachlyHighScreen11 from '@/assets/teachly-high-screen-11.png';
 import teachlyHighScreen12 from '@/assets/teachly-high-screen-12.png';
+import designThinkingImg from '@/assets/design-thinking-stages.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -212,14 +213,47 @@ const ProjectCaseStudy = () => {
       team: '1 designer',
       role: 'UI/UX Designer & Researcher',
       technologies: ['Figma', 'User Research', 'Prototyping', 'User Testing', 'Design Systems'],
-      overview: 'Teachly is a language learning platform designed to connect students with qualified tutors for personalized one-on-one or group lessons. The platform allows learners to browse tutors by language, teaching style, availability, and price. Students can book sessions, manage their learning schedule, and track their progress over time. Teachly was created to address the growing demand for flexible, personalized language education that fits into busy lifestyles and accommodates different learning preferences.',
-      problem: 'Finding the right language tutor is overwhelming. Traditional language schools are expensive and inflexible, while online platforms often have confusing interfaces and lack transparency about tutor qualifications. Students struggle to find tutors who match their learning style, schedule, and budget. Many platforms also fail to provide clear progress tracking, leaving learners uncertain about their improvement.',
+      overview: 'Teachly is a modern language learning platform that connects students with qualified tutors for personalized, one-on-one or group lessons. The app is designed to make language learning more flexible, engaging, and accessible by allowing learners to browse tutors based on language, teaching style, price, and availability.\n\nThrough Teachly, students can book sessions, manage their learning schedules, and communicate directly with tutors all within a simple, intuitive interface. The platform emphasizes convenience and personalization, empowering users to learn at their own pace and on their own terms.',
+      problem: 'While learning Spanish myself, I realized how difficult it was to find a tutor that truly fit my learning preferences. Most existing platforms felt cluttered, overloaded with information, or required several steps just to book a single lesson. The experience didn\'t feel intuitive or motivating — it felt transactional.\n\nI wanted to design a more seamless and human experience — one that helps learners discover, connect, and schedule lessons with language tutors effortlessly, without unnecessary complexity or distractions.',
       research: {
-        methods: ['User interviews with 15 language learners', 'Competitive analysis of 6 learning platforms', 'Survey with 80+ respondents across different age groups'],
-        findings: [
-          'Users want to see tutor credentials, teaching style, and student reviews before booking',
-          'Flexible scheduling and easy rescheduling are top priorities for busy learners',
-          'Progress tracking and goal-setting features significantly improve motivation and retention'
+        framework: 'design-thinking',
+        image: designThinkingImg,
+        introduction: 'I followed the Design Thinking framework to guide my design process and ensure the final solution directly addressed real learner needs.',
+        phases: [
+          {
+            number: '1',
+            title: 'Empathize',
+            description: 'I started by researching how learners currently find and book language tutors. Through surveys and informal interviews, I identified key challenges users face:',
+            points: [
+              'Difficulty finding tutors who match their language goals or schedule.',
+              'Overwhelming search interfaces on existing platforms.',
+              'Frustration with complex booking and payment steps.'
+            ]
+          },
+          {
+            number: '2',
+            title: 'Define',
+            description: 'After analyzing user feedback, I refined the main problem into a clear statement:',
+            quote: '"How might we design a simple and intuitive experience that helps users find suitable tutors quickly and book lessons with minimal effort?"'
+          },
+          {
+            number: '3',
+            title: 'Ideate',
+            description: 'I brainstormed multiple interface ideas focusing on tutor discovery, filters, and scheduling simplicity. My sketches explored different layouts for tutor profiles, search filters, and the booking process to reduce confusion and clicks.'
+          },
+          {
+            number: '4',
+            title: 'Prototype',
+            description: 'I created low-fidelity wireframes in Figma that visualized the complete booking journey — from searching for a tutor to confirming a lesson. These prototypes helped identify early usability issues before investing in visuals.'
+          },
+          {
+            number: '5',
+            title: 'Test',
+            description: 'I conducted usability testing with language learners. Participants were asked to search for a tutor, choose a lesson time, and proceed to payment.',
+            points: [
+              'Their feedback helped me simplify certain steps, such as improving filter clarity and adjusting button placement on the booking page.'
+            ]
+          }
         ]
       },
       persona: {
@@ -529,12 +563,12 @@ const ProjectCaseStudy = () => {
               </div>
             </section>
 
-            {/* The Problem */}
+            {/* The Challenge / Problem */}
             <section>
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                The Problem
+                {isTeachlyProject ? 'The Challenge' : 'The Problem'}
               </h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <p className="text-muted-foreground leading-relaxed text-lg whitespace-pre-line">
                 {project.problem}
               </p>
             </section>
@@ -546,111 +580,173 @@ const ProjectCaseStudy = () => {
               </h2>
               
               <div className="space-y-8">
-                {/* Framework Introduction */}
-                <div className="bg-muted/50 rounded-lg p-6 border border-border">
-                  <p className="text-muted-foreground leading-relaxed">
-                    I structured my process using the <span className="font-semibold text-foreground">Double Diamond framework</span>, which separates the design journey into exploring the problem space and then shaping the solution space.
-                  </p>
-                </div>
-
-                {/* Double Diamond Diagram */}
-                <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
-                  <img
-                    src={doubleDiamondImg}
-                    alt="Double Diamond Framework"
-                    className="w-full max-w-3xl mx-auto"
-                  />
-                </div>
-
-                {/* Double Diamond Phases */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Discover Phase */}
-                  <Card className="border-l-4 border-l-primary">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-3 mb-4">
-                        <div className="p-2 rounded-lg bg-primary/10">
-                          <Lightbulb className="text-primary" size={24} />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-xl text-foreground">Discover (Diverge)</h3>
-                          <p className="text-sm text-muted-foreground">Exploring the problem space</p>
-                        </div>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        I began by exploring the problem space broadly, conducting user research to understand barriers to therapy. Through surveys and informal interviews, I uncovered two key insights:
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          <span className="text-muted-foreground text-sm">Many users, especially in the Middle East, face cultural stigma around seeking therapy.</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <span className="text-primary mt-1">•</span>
-                          <span className="text-muted-foreground text-sm">Even those willing to seek help struggle with confusing booking processes and lack of transparency about therapists.</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  {/* Define Phase */}
-                  <Card className="border-l-4 border-l-accent">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-3 mb-4">
-                        <div className="p-2 rounded-lg bg-accent/10">
-                          <Target className="text-accent" size={24} />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-xl text-foreground">Define (Converge)</h3>
-                          <p className="text-sm text-muted-foreground">Synthesizing the problem</p>
-                        </div>
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed mb-4">
-                        I synthesized the research into a clear problem statement:
-                      </p>
-                      <div className="bg-accent/5 rounded-lg p-4 border-l-2 border-accent">
-                        <p className="text-foreground italic">
-                          "How might we design a platform that makes therapy booking simple, private, and culturally sensitive, so users can feel comfortable seeking mental health support?"
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Develop Phase */}
-                  <Card className="border-l-4 border-l-secondary">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-3 mb-4">
-                        <div className="p-2 rounded-lg bg-secondary/10">
-                          <Code className="text-secondary-foreground" size={24} />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-xl text-foreground">Develop (Diverge)</h3>
-                          <p className="text-sm text-muted-foreground">Generating solutions</p>
-                        </div>
-                      </div>
+                {isTeachlyProject && 'framework' in project.research && project.research.framework === 'design-thinking' ? (
+                  // Design Thinking Framework for Teachly
+                  <>
+                    {/* Framework Introduction */}
+                    <div className="bg-muted/50 rounded-lg p-6 border border-border">
                       <p className="text-muted-foreground leading-relaxed">
-                        I generated potential solutions, mapping user flows (booking sessions, managing appointments) and sketching low-fidelity wireframes to explore different design directions.
+                        {project.research.introduction}
                       </p>
-                    </CardContent>
-                  </Card>
+                    </div>
 
-                  {/* Deliver Phase */}
-                  <Card className="border-l-4 border-l-chart-2">
-                    <CardContent className="pt-6">
-                      <div className="flex items-start gap-3 mb-4">
-                        <div className="p-2 rounded-lg bg-chart-2/10">
-                          <AlertCircle className="text-chart-2" size={24} />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-xl text-foreground">Deliver (Converge)</h3>
-                          <p className="text-sm text-muted-foreground">Refining the solution</p>
-                        </div>
-                      </div>
+                    {/* Design Thinking Diagram */}
+                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
+                      <img
+                        src={project.research.image}
+                        alt="Design Thinking Framework"
+                        className="w-full max-w-4xl mx-auto"
+                      />
+                    </div>
+
+                    {/* Design Thinking Phases */}
+                    <div className="space-y-6">
+                      {project.research.phases.map((phase, index) => (
+                        <Card key={index} className="border-l-4 border-l-primary">
+                          <CardContent className="pt-6">
+                            <div className="flex items-start gap-4 mb-4">
+                              <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                                <span className="font-bold text-primary text-lg">{phase.number}</span>
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-xl text-foreground mb-2">{phase.title}</h3>
+                                <p className="text-muted-foreground leading-relaxed">
+                                  {phase.description}
+                                </p>
+                                {phase.points && (
+                                  <ul className="mt-3 space-y-2">
+                                    {phase.points.map((point, idx) => (
+                                      <li key={idx} className="flex items-start gap-2">
+                                        <span className="text-primary mt-1">•</span>
+                                        <span className="text-muted-foreground text-sm">{point}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                                {phase.quote && (
+                                  <div className="bg-accent/5 rounded-lg p-4 border-l-2 border-accent mt-3">
+                                    <p className="text-foreground italic">
+                                      {phase.quote}
+                                    </p>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  // Double Diamond Framework for Thera
+                  <>
+                    {/* Framework Introduction */}
+                    <div className="bg-muted/50 rounded-lg p-6 border border-border">
                       <p className="text-muted-foreground leading-relaxed">
-                        I refined the best solution into high-fidelity prototypes and conducted usability testing. Feedback helped me iterate on the therapist selection flow and homepage scheduling, ensuring the app felt both intuitive and discreet.
+                        I structured my process using the <span className="font-semibold text-foreground">Double Diamond framework</span>, which separates the design journey into exploring the problem space and then shaping the solution space.
                       </p>
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+
+                    {/* Double Diamond Diagram */}
+                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
+                      <img
+                        src={doubleDiamondImg}
+                        alt="Double Diamond Framework"
+                        className="w-full max-w-3xl mx-auto"
+                      />
+                    </div>
+
+                    {/* Double Diamond Phases */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {/* Discover Phase */}
+                      <Card className="border-l-4 border-l-primary">
+                        <CardContent className="pt-6">
+                          <div className="flex items-start gap-3 mb-4">
+                            <div className="p-2 rounded-lg bg-primary/10">
+                              <Lightbulb className="text-primary" size={24} />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-xl text-foreground">Discover (Diverge)</h3>
+                              <p className="text-sm text-muted-foreground">Exploring the problem space</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            I began by exploring the problem space broadly, conducting user research to understand barriers to therapy. Through surveys and informal interviews, I uncovered two key insights:
+                          </p>
+                          <ul className="space-y-2">
+                            <li className="flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <span className="text-muted-foreground text-sm">Many users, especially in the Middle East, face cultural stigma around seeking therapy.</span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                              <span className="text-primary mt-1">•</span>
+                              <span className="text-muted-foreground text-sm">Even those willing to seek help struggle with confusing booking processes and lack of transparency about therapists.</span>
+                            </li>
+                          </ul>
+                        </CardContent>
+                      </Card>
+
+                      {/* Define Phase */}
+                      <Card className="border-l-4 border-l-accent">
+                        <CardContent className="pt-6">
+                          <div className="flex items-start gap-3 mb-4">
+                            <div className="p-2 rounded-lg bg-accent/10">
+                              <Target className="text-accent" size={24} />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-xl text-foreground">Define (Converge)</h3>
+                              <p className="text-sm text-muted-foreground">Synthesizing the problem</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed mb-4">
+                            I synthesized the research into a clear problem statement:
+                          </p>
+                          <div className="bg-accent/5 rounded-lg p-4 border-l-2 border-accent">
+                            <p className="text-foreground italic">
+                              "How might we design a platform that makes therapy booking simple, private, and culturally sensitive, so users can feel comfortable seeking mental health support?"
+                            </p>
+                          </div>
+                        </CardContent>
+                      </Card>
+
+                      {/* Develop Phase */}
+                      <Card className="border-l-4 border-l-secondary">
+                        <CardContent className="pt-6">
+                          <div className="flex items-start gap-3 mb-4">
+                            <div className="p-2 rounded-lg bg-secondary/10">
+                              <Code className="text-secondary-foreground" size={24} />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-xl text-foreground">Develop (Diverge)</h3>
+                              <p className="text-sm text-muted-foreground">Generating solutions</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed">
+                            I generated potential solutions, mapping user flows (booking sessions, managing appointments) and sketching low-fidelity wireframes to explore different design directions.
+                          </p>
+                        </CardContent>
+                      </Card>
+
+                      {/* Deliver Phase */}
+                      <Card className="border-l-4 border-l-chart-2">
+                        <CardContent className="pt-6">
+                          <div className="flex items-start gap-3 mb-4">
+                            <div className="p-2 rounded-lg bg-chart-2/10">
+                              <AlertCircle className="text-chart-2" size={24} />
+                            </div>
+                            <div>
+                              <h3 className="font-semibold text-xl text-foreground">Deliver (Converge)</h3>
+                              <p className="text-sm text-muted-foreground">Refining the solution</p>
+                            </div>
+                          </div>
+                          <p className="text-muted-foreground leading-relaxed">
+                            I refined the best solution into high-fidelity prototypes and conducted usability testing. Feedback helped me iterate on the therapist selection flow and homepage scheduling, ensuring the app felt both intuitive and discreet.
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </>
+                )}
               </div>
             </section>
 
