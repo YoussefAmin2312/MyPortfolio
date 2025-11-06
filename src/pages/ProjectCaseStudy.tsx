@@ -130,6 +130,23 @@ const ProjectCaseStudy = () => {
       userFlow: {
         image: vernxUserFlowImg
       },
+      persona: {
+        name: 'Ahmed Saleh',
+        age: 24,
+        occupation: 'Real Estate Investor',
+        bio: 'Ahmed is an ambitious investor looking to expand his property portfolio in the UAE. He wants a modern platform where he can quickly compare investment opportunities and calculate costs transparently.',
+        photo: theraPersonaImg,
+        goals: [
+          'Easily compare property prices and locations',
+          'View all payment details upfront',
+          'Contact agents quickly'
+        ],
+        frustrations: [
+          'Hidden fees and unclear price breakdowns',
+          'Slow or confusing websites',
+          'Difficulty finding trustworthy listings'
+        ]
+      },
       wireframes: [
         {
           description: 'Homepage wireframe showcasing the main hero section with search functionality and clean navigation.',
@@ -177,6 +194,43 @@ const ProjectCaseStudy = () => {
           description: 'Contact and payment information section featuring agent details, additional fees breakdown, and monthly costs calculator.',
           image: vernxHighContact
         }
+      ],
+      usabilityTesting: {
+        description: 'I conducted a usability test with three participants who browsed, compared, and viewed detailed property pages.',
+        findings: [
+          {
+            participant: 'Participant 1',
+            feedback: 'I love the dark theme — it feels premium. But I wish the property filter had more location options.'
+          },
+          {
+            participant: 'Participant 2',
+            feedback: 'The cost breakdown helped a lot. Other websites usually hide those fees.'
+          },
+          {
+            participant: 'Participant 3',
+            feedback: 'The agent contact button should appear higher on the page — it\'s easy to miss.'
+          }
+        ],
+        improvements: [
+          {
+            title: 'Enhanced Filters',
+            description: 'Added location, property type, and price range filters.'
+          },
+          {
+            title: 'Visible Contact CTA',
+            description: 'Moved the agent button to appear above the property description.'
+          },
+          {
+            title: 'Cost Transparency',
+            description: 'Refined payment breakdown layout for better readability.'
+          }
+        ]
+      },
+      keyTakeaways: [
+        'A minimalist, premium design can enhance user trust and engagement.',
+        'Transparent pricing and easy agent contact are essential for conversion.',
+        'Small usability tweaks — such as repositioning buttons and filters — greatly improved task success rates.',
+        'Consistent design systems save time and ensure scalability for future pages.'
       ]
     },
     'thera': {
@@ -668,14 +722,16 @@ const ProjectCaseStudy = () => {
             </section>
 
             {/* The Challenge / Problem */}
+            {'problem' in project && (
             <section>
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
                 {isTeachlyProject ? 'The Challenge' : 'The Problem'}
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg whitespace-pre-line">
-                {project.problem}
+                {(project as any).problem}
               </p>
             </section>
+            )}
 
             {/* Research */}
             <section>
