@@ -71,6 +71,13 @@ import leanUxDiagramImg from '@/assets/lean-ux-diagram.png';
 import vernxInfoArchImg from '@/assets/vernx-information-architecture.png';
 import vernxTaskFlowImg from '@/assets/vernx-task-flow.png';
 import vernxUserFlowImg from '@/assets/vernx-user-flow.png';
+import vernxWireframeHome from '@/assets/vernx-wireframe-home.png';
+import vernxWireframePropertyDetail from '@/assets/vernx-wireframe-property-detail.png';
+import vernxHighHome from '@/assets/vernx-high-home.png';
+import vernxHighFeaturedProperties from '@/assets/vernx-high-featured-properties.png';
+import vernxHighReviews from '@/assets/vernx-high-reviews.png';
+import vernxHighPropertyDetail from '@/assets/vernx-high-property-detail.png';
+import vernxHighContact from '@/assets/vernx-high-contact.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -118,7 +125,39 @@ const ProjectCaseStudy = () => {
       taskFlow: vernxTaskFlowImg,
       userFlow: {
         image: vernxUserFlowImg
-      }
+      },
+      wireframes: [
+        {
+          description: 'Homepage wireframe showcasing the main hero section with search functionality and featured property listings.',
+          image: vernxWireframeHome
+        },
+        {
+          description: 'Property detail page wireframe displaying property images, description, key features, contact agent section, and payment information breakdown.',
+          image: vernxWireframePropertyDetail
+        }
+      ],
+      highFidelityUI: [
+        {
+          description: 'High-fidelity homepage design featuring a dramatic hero section with "Find your dream place" search bar against a modern building background.',
+          image: vernxHighHome
+        },
+        {
+          description: 'Featured Properties section showcasing premium listings with property images, details, pricing, and view details buttons.',
+          image: vernxHighFeaturedProperties
+        },
+        {
+          description: 'Client Reviews section displaying testimonials from satisfied clients with 5-star ratings and their locations.',
+          image: vernxHighReviews
+        },
+        {
+          description: 'Property detail page showing a luxury villa with comprehensive image gallery, property specifications, and amenities list.',
+          image: vernxHighPropertyDetail
+        },
+        {
+          description: 'Contact and payment information section featuring agent details, additional fees breakdown, and monthly costs calculator.',
+          image: vernxHighContact
+        }
+      ]
     },
     'thera': {
       title: 'Thera',
@@ -1124,6 +1163,62 @@ const ProjectCaseStudy = () => {
                 </section>
               </>
             ) : null))}
+
+            {/* VernX Wireframes */}
+            {projectId === 'book-heaven' && (project as any).wireframes && (
+              <section>
+                <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                  Wireframes
+                </h2>
+                <p className="text-muted-foreground mb-8">
+                  These wireframes showcase the foundational layout and structure of the VernX platform. Each screen was designed to prioritize clarity and ease of navigation, ensuring users can browse properties and access key information without unnecessary complexity.
+                </p>
+                <div className="space-y-8">
+                  {(project as any).wireframes.map((wireframe: any, index: number) => (
+                    <div key={index} className="space-y-4">
+                      <p className="text-muted-foreground leading-relaxed">
+                        {wireframe.description}
+                      </p>
+                      <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                        <img
+                          src={wireframe.image}
+                          alt={`Wireframe ${index + 1}`}
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* VernX High-Fidelity UI */}
+            {projectId === 'book-heaven' && (project as any).highFidelityUI && (
+              <section>
+                <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                  High-Fidelity UI Design
+                </h2>
+                <p className="text-muted-foreground mb-8">
+                  The high-fidelity designs bring VernX to life with polished visuals, refined typography, and a cohesive color palette. These screens represent the final user interface, designed to convey luxury and professionalism while maintaining intuitive functionality.
+                </p>
+                <div className="space-y-8">
+                  {(project as any).highFidelityUI.map((screen: any, index: number) => (
+                    <div key={index} className="space-y-4">
+                      <p className="text-muted-foreground leading-relaxed">
+                        {screen.description}
+                      </p>
+                      <div className="rounded-lg overflow-hidden shadow-md bg-background">
+                        <img
+                          src={screen.image}
+                          alt={`High-fidelity UI ${index + 1}`}
+                          className="w-full"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
             {/* Wireframes */}
             {'wireframes' in project && (
