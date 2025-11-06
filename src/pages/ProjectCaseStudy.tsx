@@ -67,6 +67,7 @@ import designThinkingImg from '@/assets/design-thinking-stages.png';
 import teachlyInfoArchImg from '@/assets/teachly-information-architecture.png';
 import teachlyUserFlowImg from '@/assets/teachly-user-flow.png';
 import teachlyTaskFlowImg from '@/assets/teachly-task-flow.png';
+import leanUxDiagramImg from '@/assets/lean-ux-diagram.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -78,29 +79,31 @@ const ProjectCaseStudy = () => {
 
   const projects = {
     'book-heaven': {
-      title: 'Book Heaven',
-      subtitle: 'Flutter Bookstore App with Team Leadership',
+      title: 'VernX',
+      subtitle: 'Luxury Real Estate Website',
       image: bookHeavenImg,
-      category: 'Mobile App',
-      duration: '3 months',
-      team: '4 developers',
-      role: 'Team Leader & Flutter Developer',
-      technologies: ['Flutter', 'Firebase', 'Real-time Database', 'Authentication'],
-      overview: 'Led a team to develop a comprehensive bookstore application during my internship. The app features real-time inventory management, user authentication, and a seamless book discovery experience.',
-      challenges: [
-        'Managing a diverse team with different skill levels',
-        'Implementing real-time inventory synchronization',
-        'Creating an intuitive user interface for book discovery'
-      ],
-      solutions: [
-        'Established clear communication protocols and regular team meetings',
-        'Implemented Firebase real-time database for instant inventory updates',
-        'Conducted user testing sessions to refine the UI/UX design'
-      ],
-      results: [
-        'Successfully delivered the project within the 3-month timeline',
-        'Achieved 95% user satisfaction in testing phase',
-        'Gained valuable experience in team leadership and project management'
+      category: 'UI/UX Design',
+      duration: '3 weeks',
+      team: '1 designer',
+      role: 'UI/UX Designer',
+      technologies: ['Figma', 'Miro'],
+      overview: 'VernX is a luxury real estate website designed to make finding and purchasing property effortless and visually engaging. The platform allows users to browse premium listings, compare properties, and contact agents seamlessly. My goal was to design a clean, elegant interface that builds trust, simplifies navigation, and enhances the overall user experience for high-end buyers.',
+      problem: 'Many real estate websites overwhelm users with cluttered layouts, inconsistent visuals, and complex navigation. Users often struggle to find reliable property information, compare listings, or understand hidden costs. VernX was created to solve these issues by focusing on clarity, transparency, and a luxurious but simple browsing experience.',
+      researchMethodology: 'Lean UX',
+      leanUxDiagram: leanUxDiagramImg,
+      leanUxPhases: [
+        {
+          title: '1. Think',
+          description: 'Before jumping into visuals, I started by understanding the users — people searching for reliable real estate listings without unnecessary complexity. I focused on defining clear goals: helping users browse, compare, and contact agents easily.'
+        },
+        {
+          title: '2. Make',
+          description: 'I quickly moved to wireframing and prototyping the main pages — home, property listings, and contact sections. Instead of overanalyzing, I tested designs early to see what worked best in terms of layout and navigation.'
+        },
+        {
+          title: '3. Check',
+          description: 'After testing the prototype with a few users, I gathered feedback on usability and clarity. I refined button placements, improved image hierarchy, and simplified the filter section to make property discovery smoother and faster.'
+        }
       ]
     },
     'thera': {
@@ -608,7 +611,33 @@ const ProjectCaseStudy = () => {
               </h2>
               
               <div className="space-y-8">
-                {isTeachlyProject && 'framework' in project.research && project.research.framework === 'design-thinking' ? (
+                {'researchMethodology' in project && (project as any).researchMethodology === 'Lean UX' ? (
+                  // Lean UX Framework for VernX
+                  <>
+                    {/* Lean UX Diagram */}
+                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
+                      <img
+                        src={(project as any).leanUxDiagram}
+                        alt="Lean UX Framework"
+                        className="w-full max-w-4xl mx-auto"
+                      />
+                    </div>
+
+                    {/* Lean UX Phases */}
+                    <div className="space-y-6">
+                      {(project as any).leanUxPhases.map((phase: any, index: number) => (
+                        <Card key={index} className="border-l-4 border-l-primary">
+                          <CardContent className="pt-6">
+                            <h3 className="font-semibold text-xl text-foreground mb-3">{phase.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {phase.description}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </>
+                ) : isTeachlyProject && 'framework' in project.research && project.research.framework === 'design-thinking' ? (
                   // Design Thinking Framework for Teachly
                   <>
                     {/* Framework Introduction */}
