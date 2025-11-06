@@ -68,6 +68,9 @@ import teachlyInfoArchImg from '@/assets/teachly-information-architecture.png';
 import teachlyUserFlowImg from '@/assets/teachly-user-flow.png';
 import teachlyTaskFlowImg from '@/assets/teachly-task-flow.png';
 import leanUxDiagramImg from '@/assets/lean-ux-diagram.png';
+import vernxInfoArchImg from '@/assets/vernx-information-architecture.png';
+import vernxTaskFlowImg from '@/assets/vernx-task-flow.png';
+import vernxUserFlowImg from '@/assets/vernx-user-flow.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -104,7 +107,18 @@ const ProjectCaseStudy = () => {
           title: '3. Check',
           description: 'After testing the prototype with a few users, I gathered feedback on usability and clarity. I refined button placements, improved image hierarchy, and simplified the filter section to make property discovery smoother and faster.'
         }
-      ]
+      ],
+      projectGoals: [
+        'Make the browsing experience fast and intuitive for first-time visitors.',
+        'Build a layout that clearly showcases properties through visuals and structured information.',
+        'Ensure that users can easily contact agents or schedule visits directly from the listings page.',
+        'Maintain a professional, minimal aesthetic that aligns with real estate standards while staying unique to VernX\'s brand.'
+      ],
+      informationArchitecture: vernxInfoArchImg,
+      taskFlow: vernxTaskFlowImg,
+      userFlow: {
+        image: vernxUserFlowImg
+      }
     },
     'thera': {
       title: 'Thera',
