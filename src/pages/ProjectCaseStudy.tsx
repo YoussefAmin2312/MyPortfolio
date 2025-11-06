@@ -1031,6 +1031,9 @@ const ProjectCaseStudy = () => {
                   <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
                     Information Architecture
                   </h2>
+                  <p className="text-muted-foreground mb-6">
+                    This diagram illustrates the hierarchical structure of VernX's navigation, showing how users can access different sections from the home page and navigate to property details through the Rent and Buy options.
+                  </p>
                   <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
                     <img
                       src={(project as any).informationArchitecture}
@@ -1046,6 +1049,9 @@ const ProjectCaseStudy = () => {
                   <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
                     Task Flow
                   </h2>
+                  <p className="text-muted-foreground mb-6">
+                    The task flow outlines the step-by-step process users follow to complete key actions on VernX, from browsing properties to scheduling viewings or making inquiries.
+                  </p>
                   <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
                     <img
                       src={(project as any).taskFlow}
@@ -1062,6 +1068,9 @@ const ProjectCaseStudy = () => {
                   <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
                     User Flow
                   </h2>
+                  <p className="text-muted-foreground mb-6">
+                    This flow maps the user's journey through VernX, highlighting decision points and interactions as they search, filter, and engage with property listings.
+                  </p>
                   <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
                     <img
                       src={(project as any).userFlow.image}
