@@ -808,6 +808,7 @@ const ProjectCaseStudy = () => {
             </section>
 
             {/* Persona */}
+            {('persona' in project || 'personas' in project) && (
             <section>
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
                 User Persona{(project as any).personas ? 's' : ''}
@@ -873,7 +874,7 @@ const ProjectCaseStudy = () => {
                     </Card>
                   ))}
                 </div>
-              ) : (
+              ) : 'persona' in project && (
                 // Single persona (for Thera and other projects)
                 <Card>
                   <CardContent className="pt-6">
@@ -928,6 +929,7 @@ const ProjectCaseStudy = () => {
                 </Card>
               )}
             </section>
+            )}
 
             {/* Project Goals */}
             {'projectGoals' in project && (
