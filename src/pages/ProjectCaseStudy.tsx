@@ -1023,6 +1023,55 @@ const ProjectCaseStudy = () => {
                   </div>
                 </section>
               </>
+            ) : (projectId === 'book-heaven' && 'informationArchitecture' in project ? (
+              // VernX: Show three separate diagram sections without descriptions
+              <>
+                {/* Information Architecture */}
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    Information Architecture
+                  </h2>
+                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <img
+                      src={(project as any).informationArchitecture}
+                      alt="Information Architecture diagram"
+                      className="w-full"
+                    />
+                  </div>
+                </section>
+
+                {/* Task Flow */}
+                {'taskFlow' in project && (
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    Task Flow
+                  </h2>
+                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <img
+                      src={(project as any).taskFlow}
+                      alt="Task Flow diagram"
+                      className="w-full"
+                    />
+                  </div>
+                </section>
+                )}
+
+                {/* User Flow */}
+                {'userFlow' in project && (
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    User Flow
+                  </h2>
+                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <img
+                      src={(project as any).userFlow.image}
+                      alt="User Flow diagram"
+                      className="w-full"
+                    />
+                  </div>
+                </section>
+                )}
+              </>
             ) : ('userFlow' in project ? (
               // Thera: Show original Information Architecture and User Flow sections
               <>
@@ -1065,7 +1114,7 @@ const ProjectCaseStudy = () => {
                   </div>
                 </section>
               </>
-            ) : null)}
+            ) : null))}
 
             {/* Wireframes */}
             {'wireframes' in project && (
