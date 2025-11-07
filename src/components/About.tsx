@@ -1,15 +1,15 @@
-import { GraduationCap, Award, MapPin } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import introImg from '@/assets/about-intro.jpg';
+import skill1Img from '@/assets/about-skill-1.jpg';
+import skill2Img from '@/assets/about-skill-2.jpg';
+import philosophyImg from '@/assets/about-philosophy.jpg';
 
 const About = () => {
-  const certifications = [
-    'CCNA Certification',
-    'Flutter Development Certificate',
-    'UX Design Training',
-  ];
+  const navigate = useNavigate();
 
   return (
-    <section id="about" className="py-20 bg-gradient-subtle">
+    <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
@@ -18,85 +18,97 @@ const About = () => {
           <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Bio Content */}
-          <div className="space-y-6">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I am a computer engineer with practical experience in UI/UX and mobile app development. 
-              I have built apps with real-time data, authentication, and clean UI/UX design principles.
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My expertise spans across Flutter development, Firebase integration, and user-centered 
-              design methodologies. I believe in creating digital experiences that are not only 
-              functional but also intuitive and delightful for users.
-            </p>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+          {/* Left Tall Rectangle - Intro */}
+          <div className="lg:col-span-4 h-[600px] group relative overflow-hidden rounded-xl">
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+              style={{ backgroundImage: `url(${introImg})` }}
+            />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+            <div className="relative h-full flex flex-col justify-end p-8 text-white">
+              <h3 className="font-heading font-bold text-2xl mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                My Story
+              </h3>
+              <p className="text-base leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                A computer engineer passionate about creating meaningful digital experiences through UI/UX design and mobile development. I blend technical expertise with creative vision.
+              </p>
+            </div>
+          </div>
 
-            {/* Education & Location */}
-            <div className="space-y-4 pt-6">
-              <div className="flex items-center space-x-3">
-                <GraduationCap className="text-primary" size={24} />
-                <div>
-                  <h4 className="font-semibold text-foreground">British University in Egypt</h4>
-                  <p className="text-muted-foreground">Dual certificate with London South Bank University</p>
-                </div>
+          {/* Middle Column - Two Stacked Rectangles */}
+          <div className="lg:col-span-4 flex flex-col gap-8">
+            {/* Top Rectangle - Design Focus */}
+            <div className="h-[288px] group relative overflow-hidden rounded-xl">
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+                style={{ backgroundImage: `url(${skill1Img})` }}
+              />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+              <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                <h3 className="font-heading font-bold text-xl mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  Design Philosophy
+                </h3>
+                <p className="text-sm leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                  User-centered design with a focus on accessibility, aesthetics, and intuitive interactions.
+                </p>
               </div>
-              
-              <div className="flex items-center space-x-3">
-                <MapPin className="text-primary" size={24} />
-                <div>
-                  <p className="text-muted-foreground">Open to opportunities in UAE, Canada, and globally</p>
-                </div>
+            </div>
+
+            {/* Bottom Rectangle - Development Skills */}
+            <div className="h-[288px] group relative overflow-hidden rounded-xl">
+              <div 
+                className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+                style={{ backgroundImage: `url(${skill2Img})` }}
+              />
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+              <div className="relative h-full flex flex-col justify-end p-6 text-white">
+                <h3 className="font-heading font-bold text-xl mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  Technical Skills
+                </h3>
+                <p className="text-sm leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                  Flutter, Firebase, React, and modern development tools to bring designs to life.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Certifications */}
-          <div className="space-y-6">
-            <h3 className="font-heading font-semibold text-2xl text-foreground mb-6">
-              Certifications & Training
-            </h3>
-            
-            <div className="grid gap-4">
-              {certifications.map((cert, index) => (
-                <Card key={index} className="hover-lift bg-gradient-card border-0 shadow-card">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="bg-gradient-primary p-3 rounded-full">
-                        <Award className="text-white" size={24} />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">{cert}</h4>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            {/* Key Highlights */}
-            <div className="bg-gradient-primary p-6 rounded-xl text-white mt-8">
-              <h4 className="font-heading font-semibold text-xl mb-4">Key Highlights</h4>
-              <ul className="space-y-2">
-                <li className="flex items-start space-x-2">
-                  <span className="text-white/80">•</span>
-                  <span>Led team projects during Flutter internship</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="text-white/80">•</span>
-                  <span>Experience with real-time data and authentication systems</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="text-white/80">•</span>
-                  <span>Strong foundation in networking and database systems</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <span className="text-white/80">•</span>
-                  <span>Business exposure through car dealership work</span>
-                </li>
-              </ul>
+          {/* Right Tall Rectangle - Philosophy/Photo */}
+          <div className="lg:col-span-4 h-[600px] group relative overflow-hidden rounded-xl">
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+              style={{ backgroundImage: `url(${philosophyImg})` }}
+            />
+            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+            <div className="relative h-full flex flex-col justify-end p-8 text-white">
+              <h3 className="font-heading font-bold text-2xl mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                Philosophy
+              </h3>
+              <p className="text-base leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300 mb-6">
+                I believe in creating digital products that solve real problems while delivering delightful user experiences. Every pixel has a purpose.
+              </p>
+              <div className="space-y-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="text-sm">
+                  <span className="font-semibold">Location:</span> Open to UAE, Canada & Global
+                </div>
+                <div className="text-sm">
+                  <span className="font-semibold">Education:</span> British University in Egypt
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* See About Me Button */}
+        <div className="flex justify-center">
+          <Button 
+            onClick={() => navigate('/about')}
+            size="lg"
+            className="bg-gradient-primary hover:opacity-90 text-white font-semibold px-8 py-6 text-lg transition-opacity duration-300"
+          >
+            See About Me
+          </Button>
         </div>
       </div>
     </section>
