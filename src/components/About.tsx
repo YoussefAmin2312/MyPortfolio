@@ -31,9 +31,6 @@ const About = () => {
               <h3 className="font-heading font-bold text-2xl mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                 My Story
               </h3>
-              <p className="text-base leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                A computer engineer passionate about creating meaningful digital experiences through UI/UX design and mobile development. I blend technical expertise with creative vision.
-              </p>
             </div>
           </div>
 
@@ -50,9 +47,6 @@ const About = () => {
                 <h3 className="font-heading font-bold text-xl mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   Design Philosophy
                 </h3>
-                <p className="text-sm leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                  User-centered design with a focus on accessibility, aesthetics, and intuitive interactions.
-                </p>
               </div>
             </div>
 
@@ -64,9 +58,6 @@ const About = () => {
               />
               <div className="absolute inset-0 bg-gray-400/20 group-hover:bg-transparent transition-all duration-500" />
               <div className="relative h-full flex flex-col justify-end p-6 text-white">
-                <h3 className="font-heading font-bold text-xl mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  Technical Skills
-                </h3>
               </div>
             </div>
           </div>
@@ -82,17 +73,6 @@ const About = () => {
               <h3 className="font-heading font-bold text-2xl mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                 Philosophy
               </h3>
-              <p className="text-base leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300 mb-6">
-                I believe in creating digital products that solve real problems while delivering delightful user experiences. Every pixel has a purpose.
-              </p>
-              <div className="space-y-2 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="text-sm">
-                  <span className="font-semibold">Location:</span> Open to UAE, Canada & Global
-                </div>
-                <div className="text-sm">
-                  <span className="font-semibold">Education:</span> British University in Egypt
-                </div>
-              </div>
             </div>
           </div>
         </div>
