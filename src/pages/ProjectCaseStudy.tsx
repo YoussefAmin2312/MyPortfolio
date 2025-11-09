@@ -107,7 +107,7 @@ const ProjectCaseStudy = () => {
       category: 'UI/UX Design',
       team: '1 designer',
       role: 'UI/UX Designer',
-      technologies: ['Figma', 'Miro'],
+      technologies: ['Figma'],
       overview: 'VernX is a luxury real estate website designed to make finding and purchasing property effortless and visually engaging. The platform allows users to browse premium listings, compare properties, and contact agents seamlessly. My goal was to design a clean, elegant interface that builds trust, simplifies navigation, and enhances the overall user experience for high-end buyers.',
       problem: 'Many real estate websites overwhelm users with cluttered layouts, inconsistent visuals, and complex navigation. Users often struggle to find reliable property information, compare listings, or understand hidden costs. VernX was created to solve these issues by focusing on clarity, transparency, and a luxurious but simple browsing experience.',
       researchMethodology: 'Lean UX',
