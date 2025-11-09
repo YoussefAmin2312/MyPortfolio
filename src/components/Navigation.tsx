@@ -40,9 +40,6 @@ const Navigation = () => {
   }, {
     label: 'Experience',
     href: '#experience'
-  }, {
-    label: 'Contact',
-    href: '#contact'
   }];
   const handleNavClick = (href: string) => {
     if (isHomePage) {
