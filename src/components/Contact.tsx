@@ -42,8 +42,8 @@ const Contact = () => {
     {
       icon: <Mail className="text-primary" size={24} />,
       title: 'Email',
-      value: 'youssef.job21@gmail.com',
-      href: 'mailto:youssef.job21@gmail.com',
+      value: 'youssef.yasser.1408@gmail.com',
+      href: 'mailto:youssef.yasser.1408@gmail.com',
     },
     {
       icon: <MapPin className="text-secondary" size={24} />,
@@ -227,10 +227,10 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground">
                   Prefer email? Reach me directly at{' '}
                   <a 
-                    href="mailto:youssef.job21@gmail.com"
+                    href="mailto:youssef.yasser.1408@gmail.com"
                     className="text-primary hover:underline font-medium"
                   >
-                    youssef.job21@gmail.com
+                    youssef.yasser.1408@gmail.com
                   </a>
                 </p>
               </div>

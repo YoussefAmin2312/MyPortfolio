@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { ArrowDown, Linkedin, Mail, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroBackground from '@/assets/hero-bg.jpg';
 import profileAvatar from '@/assets/profile-avatar.jpg';
@@ -42,8 +42,10 @@ const Hero = () => {
                 Download Resume
               </a>
             </Button>
-            <Button onClick={() => scrollToSection('#contact')} size="lg" className="bg-white/10 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 hover:text-white hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg">
-              Contact Me
+            <Button asChild size="lg" className="bg-white/10 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 hover:text-white hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=youssef.yasser.1408@gmail.com" target="_blank" rel="noopener noreferrer">
+                Contact Me
+              </a>
             </Button>
           </div>
 
