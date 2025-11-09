@@ -735,16 +735,28 @@ const ProjectCaseStudy = () => {
                 </Card>
               </div>
               {isTeachlyProject && (
-                <div className="flex justify-center">
+                <div className="flex justify-center mt-12">
                   <Button 
                     onClick={() => {
                       const prototypeSection = document.getElementById('prototype-section');
                       prototypeSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }}
-                    size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90"
+                    className="group relative bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-primary-foreground font-inter font-semibold text-lg px-10 py-7 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
                   >
-                    Test Prototype
+                    <span className="relative z-10 flex items-center gap-3">
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Test Interactive Prototype
+                    </span>
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary-light to-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </Button>
                 </div>
               )}

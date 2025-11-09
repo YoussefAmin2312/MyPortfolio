@@ -56,6 +56,7 @@ export default {
       fontFamily: {
         heading: ['Poppins', 'system-ui', 'sans-serif'],
         body: ['Lato', 'system-ui', 'sans-serif'],
+        inter: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
