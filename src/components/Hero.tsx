@@ -27,10 +27,10 @@ const Hero = () => {
         <div className="max-w-4xl ml-8 text-left">
 
           {/* Subtitle */}
-          <p className="font-heading text-2xl sm:text-3xl lg:text-5xl text-white/90 mb-6 fade-in-delay-2">I'm Youssef, A Computer Engineer, UI/UX Designer & Mobile App Developer</p>
+          <p className="font-heading text-xl sm:text-2xl lg:text-4xl text-white/90 mb-6 fade-in-delay-2">I'm Youssef, A Computer Engineer, UI/UX Designer & Mobile App Developer</p>
 
           {/* Tagline */}
-          <p className="text-xl sm:text-2xl text-white/80 mb-12 max-w-2xl fade-in-delay-2">
+          <p className="text-lg sm:text-xl text-white/80 mb-12 max-w-2xl fade-in-delay-2">
             I design and develop user-centered experiences that are both functional and visually engaging.
           </p>
 
