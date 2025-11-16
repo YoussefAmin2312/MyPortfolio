@@ -22,7 +22,7 @@ const Experience = () => {
     },
     {
       title: 'Network Engineering Intern',
-      company: 'WE-Telecom',
+      company: 'Telecom Egypt',
       period: 'September 2023 – October 2023',
       location: 'Nasr City',
     },
